@@ -1,2 +1,2 @@
 # HumansVsOrcs
-[Innopolis University] Introduction to AI - Assignment I
+#### *Innopolis University.* Introduction to Artifficial Intellegence - Assignment I
