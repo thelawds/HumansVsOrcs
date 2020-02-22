@@ -6,17 +6,21 @@
 :- dynamic(h/2).
 :- dynamic(o/2).
 :- dynamic(t/2).
-:- [input].
+:- ['../Test_Input/input_1'].
 
 start(0,0).
 m(_,_). % Depicts move in the output
 p(_,_). % Depicts pass in the output
 
-solve(Tries) :- make, solve_game_random(0, 0, [], 0, 100).
+% TODO: make here doesn't work. Fix It!
+% TODO: Make the algorithm perform 100 tries and find the best(in terms of minimizing number of steps) path.
+solve() :- make, solve_game_random(0, 0, [], 0, 100).
 
+% TODO: Refactor code. Carry out moves and throws in different file
+% TODO: Refactor code. Make all debug outputs be performed only if special flag is turned on.
 % Moves:
 move_up(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
-	write('Move_Up'), % Debugging Output
+	% write('Move_Up'), % Debugging Output
 	% Changing coordinates of the Runner:
 	not(Pos_y is 20),
 	NPos_y is Pos_y + 1,
@@ -38,7 +42,7 @@ move_up(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
 	solve_game_random(NPos_x, NPos_y, NewSteps, NewNsteps, NewMax_steps).
 
 move_right(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
-	write('Move_Right'), % Debugging Output
+	% write('Move_Right'), % Debugging Output
 	% Changing coordinates of the Runner:
 	not(Pos_x is 20),
 	NPos_y is Pos_y,
@@ -60,7 +64,7 @@ move_right(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
 	solve_game_random(NPos_x, NPos_y, NewSteps, NewNsteps, NewMax_steps).
 
 move_down(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
-	write('Move_Down'), % Debugging Output
+	% write('Move_Down'), % Debugging Output
 	% Changing coordinates of the Runner:
 	not(Pos_y is 0),
 	NPos_y is Pos_y - 1,
@@ -82,7 +86,7 @@ move_down(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
 	solve_game_random(NPos_x, NPos_y, NewSteps, NewNsteps, NewMax_steps).
 
 move_left(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
-	write('Move_Left'), % Debugging Output
+	% write('Move_Left'), % Debugging Output
 	% Changing coordinates of the Runner:
 	not(Pos_x is 0),
 	NPos_y is Pos_y,
@@ -105,7 +109,7 @@ move_left(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
 
 % Ball Throws:
 throw_up(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
-	write('Pass_Up'), % Debugging Output
+	% write('Pass_Up'), % Debugging Output
 	% Checking Prerequisites to make the pass:
 	NPos_x is Pos_x,
 	h(NPos_x, NPos_y),
@@ -121,7 +125,7 @@ throw_up(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
 	solve_game_random(NPos_x, NPos_y, NewSteps, NewNsteps, NewMax_steps)).
 
 throw_up_right(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
-	write('Pass_Up_Right'), % Debugging Output
+	% write('Pass_Up_Right'), % Debugging Output
 	% Checking Prerequisites to make the pass:
 	% Searching for Human on the same diagonal:
 	h(NPos_x, NPos_y),
@@ -140,7 +144,7 @@ throw_up_right(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
 	)).
 
 throw_right(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
-	write('Pass_Right'), % Debugging Output
+	% write('Pass_Right'), % Debugging Output
 	% Checking Prerequisites to make the pass:
 	NPos_y is Pos_y,
 	h(NPos_x, NPos_y),
@@ -156,7 +160,7 @@ throw_right(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
 	solve_game_random(NPos_x, NPos_y, NewSteps, NewNsteps, NewMax_steps)).
 
 throw_down_right(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
-	write('Pass_Down_Right'), % Debugging Output
+	% write('Pass_Down_Right'), % Debugging Output
 	% Checking Prerequisites to make the pass:
 	% Searching for Human on the same diagonal:
 	h(NPos_x, NPos_y),
@@ -175,7 +179,7 @@ throw_down_right(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
 	)).
 
 throw_down(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
-	write('Pass_Down'), % Debugging Output
+	% write('Pass_Down'), % Debugging Output
 	% Checking Prerequisites to make the pass:
 	NPos_x is Pos_x,
 	h(NPos_x, NPos_y),
@@ -191,7 +195,7 @@ throw_down(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
 	solve_game_random(NPos_x, NPos_y, NewSteps, NewNsteps, NewMax_steps)).
 
 throw_down_left(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
-	write('Pass_Down_Left'), % Debugging Output
+	% write('Pass_Down_Left'), % Debugging Output
 	% Checking Prerequisites to make the pass:
 	% Searching for Human on the same diagonal:
 	h(NPos_x, NPos_y),
@@ -210,7 +214,7 @@ throw_down_left(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
 	)).
 
 throw_left(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
-	write('Pass_Left'), % Debugging Output
+	% write('Pass_Left'), % Debugging Output
 	% Checking Prerequisites to make the pass:
 	NPos_y is Pos_y,
 	h(NPos_x, NPos_y),
@@ -226,7 +230,7 @@ throw_left(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
 	solve_game_random(NPos_x, NPos_y, NewSteps, NewNsteps, NewMax_steps)).
 
 throw_up_left(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
-	write('Pass_Up_Left'), % Debugging Output
+	% write('Pass_Up_Left'), % Debugging Output
 	% Checking Prerequisites to make the pass:
 	% Searching for Human on the same diagonal:
 	h(NPos_x, NPos_y),
@@ -244,6 +248,8 @@ throw_up_left(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
 		solve_game_random(NPos_x, NPos_y, NewSteps, NewNsteps, NewMax_steps)
 	)).
 
+
+
 % Main algorithm:
 % Works as follows:
 % You give the algorithm your initial position as <Pos_x, Pos_y>,
@@ -251,7 +257,7 @@ throw_up_left(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
 
 solve_game_random(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :- (
 	% Debug output:
-	format('------------~nSolving with: ~a ~a~n~w~n~a~n~a~n------------', [Pos_x,Pos_y,Steps,Nsteps, Max_steps]),
+	% format('------------~nSolving with: ~a ~a~n~w~n~a~n~a~n------------', [Pos_x,Pos_y,Steps,Nsteps, Max_steps]),
 	( % Loosing Position
 		Max_steps == 0 -> false;
 		( % Winning Position:
