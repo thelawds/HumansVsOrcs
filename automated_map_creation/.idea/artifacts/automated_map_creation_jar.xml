@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="automated_map_creation:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/automated_map_creation_jar</output-path>
+    <root id="archive" name="automated_map_creation.jar">
+      <element id="module-output" name="automated_map_creation" />
+    </root>
+  </artifact>
+</component>
