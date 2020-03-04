@@ -65,12 +65,14 @@ public class MapCreator {
     public static String printable_map(char[][] map){
         StringBuilder out = new StringBuilder();
 
-        for (int i = map.length - 1; i >= 0; --i){
-            out.append("% ");
-            for (int j = 0; j < map.length; ++j){
-                out.append(map[i][j] + (j == map.length - 1 ? "\n" : "|"));
+        for (int j = map.length - 1; j >= 0; --j){
+            out.append("% <" + (j <= 9 ? "0" + j : j) + "> |");
+            for (int i = 0; i < map.length; ++i){
+                out.append(" " + map[i][j] + (i == map.length - 1 ? " |\n" : " |"));
             }
         }
+//        out.append("%      ---------------------------------------------------------------------------------\n");
+        out.append("%      <00><01><02><03><04><05><06><07><08><09><10><11><12><13><14><15><16><17><18><19>  \n");
         return out.toString();
     }
 
