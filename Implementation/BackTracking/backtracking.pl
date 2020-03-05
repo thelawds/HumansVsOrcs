@@ -105,7 +105,11 @@ pass(Curr, Next) :- (
 		pass_up(Curr, Next);
 		pass_down(Curr, Next);
 		pass_right(Curr,Next);
-		pass_left(Curr,Next)
+		pass_left(Curr,Next);
+		pass_up_right(Curr, Next);
+		pass_down_right(Curr, Next);
+		pass_up_left(Curr, Next);
+		pass_down_left(Curr, Next)
 	)
 ).
 
@@ -147,7 +151,7 @@ pass_right(Curr, Next):-(
 	not((
 		o(X2, Y0),
 		X2 #< X1,
-		X2 #> X1
+		X2 #> X0
 	))
 ).
 
@@ -161,9 +165,69 @@ pass_left(Curr, Next):-(
 	not((
 		o(X2, Y0),
 		X2 #> X1,
-		X2 #< X1
+		X2 #< X0
 	))
 ).
+
+pass_up_right(Curr, Next):-
+	Curr = [X0, Y0],
+	Next = [X1, Y1],
+	h(X1, Y1),
+	X1 #= X0 + D,
+	Y1 #= Y0 + D,
+	D > 0,
+	not((
+		o(X2, Y2),
+		X2 #= X0 + D1,
+		Y2 #= Y0 + D1,
+		D1 > 0,
+		D1 < D
+	)).
+
+pass_down_right(Curr, Next):-
+	Curr = [X0, Y0],
+	Next = [X1, Y1],
+	h(X1, Y1),
+	X1 #= X0 + D,
+	Y1 #= Y0 - D,
+	D > 0,
+	not((
+		o(X2, Y2),
+		X2 #= X0 + D1,
+		Y2 #= Y0 - D1,
+		D1 > 0,
+		D1 < D
+	)).
+
+pass_up_left(Curr, Next):-
+	Curr = [X0, Y0],
+	Next = [X1, Y1],
+	h(X1, Y1),
+	X1 #= X0 + D,
+	Y1 #= Y0 - D,
+	D < 0,
+	not((
+		o(X2, Y2),
+		X2 #= X0 + D1,
+		Y2 #= Y0 - D1,
+		D1 < 0,
+		D1 > D
+	)).
+
+pass_down_left(Curr, Next):-
+	Curr = [X0, Y0],
+	Next = [X1, Y1],
+	h(X1, Y1),
+	X1 #= X0 + D,
+	Y1 #= Y0 + D,
+	D < 0,
+	not((
+		o(X2, Y2),
+		X2 #= X0 + D1,
+		Y2 #= Y0 + D1,
+		D1 < 0,
+		D1 > D
+	)).
 
 % No GOD after this line, only shitty prolog code 
 % To print the results out:
