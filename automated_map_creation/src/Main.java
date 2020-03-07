@@ -16,7 +16,7 @@ public class Main {
         int orcs = input.nextInt();
         int humans = input.nextInt();
 
-        MapCreator mc = new MapCreator(1, 10, 20);
+        MapCreator mc = new MapCreator(touchdowns, orcs, humans);
 
         System.out.print("How much maps do you need?: ");
         int N = input.nextInt();

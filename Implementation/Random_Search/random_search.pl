@@ -13,8 +13,6 @@ m(_,_). % Depicts move in the output
 p(_,_). % Depicts pass in the output
 
 solve() :- time(solve_game_random(0, 0, [], 0, 100)).
-% TODO: Refactor code. Carry out moves and throws in different file
-% TODO: Refactor code. Make all debug outputs be performed only if special flag is turned on.
 % Moves:
 move_up(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
 	% write('Move_Up'), % Debugging Output
