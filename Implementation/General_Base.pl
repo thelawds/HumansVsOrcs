@@ -44,6 +44,11 @@ pass_up(Curr, Next):- (
 		o(X0, Y2),
 		Y2 #< Y1,
 		Y2 #> Y0
+	)),
+	not((
+		h(X0, Y3),
+		Y3 #< Y1,
+		Y3 #> Y0
 	))).
 
 pass_down(Curr, Next):- (
@@ -57,6 +62,11 @@ pass_down(Curr, Next):- (
 		o(X0, Y2),
 		Y2 #> Y1,
 		Y2 #< Y0
+	)),
+	not((
+		h(X0, Y3),
+		Y3 #> Y1,
+		Y3 #< Y0
 	))).
 
 pass_right(Curr, Next):-(
@@ -70,6 +80,11 @@ pass_right(Curr, Next):-(
 		o(X2, Y0),
 		X2 #< X1,
 		X2 #> X0
+	)),
+	not((
+		h(X3, Y0),
+		X3 #< X1,
+		X3 #> X0
 	))).
 
 pass_left(Curr, Next):-(
@@ -83,6 +98,11 @@ pass_left(Curr, Next):-(
 		o(X2, Y0),
 		X2 #> X1,
 		X2 #< X0
+	)),
+	not((
+		h(X3, Y0),
+		X3 #> X1,
+		X3 #< X0
 	))).
 
 pass_up_right(Curr, Next):-
@@ -98,6 +118,13 @@ pass_up_right(Curr, Next):-
 		Y2 #= Y0 + D1,
 		D1 > 0,
 		D1 < D
+	)),
+	not((
+		h(X3, Y3),
+		X3 #= X0 + D2,
+		Y3 #= Y0 + D2,
+		D2 > 0,
+		D2 < D
 	)).
 
 pass_down_right(Curr, Next):-
@@ -113,6 +140,13 @@ pass_down_right(Curr, Next):-
 		Y2 #= Y0 - D1,
 		D1 > 0,
 		D1 < D
+	)),
+	not((
+		h(X3, Y3),
+		X3 #= X0 + D2,
+		Y3 #= Y0 + D2,
+		D2 > 0,
+		D2 < D
 	)).
 
 pass_up_left(Curr, Next):-
@@ -128,6 +162,13 @@ pass_up_left(Curr, Next):-
 		Y2 #= Y0 - D1,
 		D1 < 0,
 		D1 > D
+	)),
+	not((
+		h(X3, Y3),
+		X3 #= X0 + D2,
+		Y3 #= Y0 + D2,
+		D2 > 0,
+		D2 < D
 	)).
 
 pass_down_left(Curr, Next):-
@@ -143,6 +184,13 @@ pass_down_left(Curr, Next):-
 		Y2 #= Y0 + D1,
 		D1 < 0,
 		D1 > D
+	)),
+	not((
+		h(X3, Y3),
+		X3 #= X0 + D2,
+		Y3 #= Y0 + D2,
+		D2 > 0,
+		D2 < D
 	)).
 
 

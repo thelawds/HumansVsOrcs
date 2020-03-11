@@ -27,11 +27,11 @@ satisfy(Curr, Moves, Passed, Visited):- (
 	% Check whether current position is available:
 	not(o(X0,Y0)),
 
-	% Len(Moves) <= 400:
+	% Len(Moves) <= 50:
 	length(Moves, X), X #< 50,
 	
 	% Check two cases: 
-	% If |(X0 + Y0) - (X1 + Y1)| = 1 => move()
+	% If |(X0 + Y0)| - |(X1 + Y1)| = 1 => move()
 	% Otherwise => pass()
 	(
 		(

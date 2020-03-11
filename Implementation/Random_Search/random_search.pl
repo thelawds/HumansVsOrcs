@@ -6,7 +6,6 @@
 :- dynamic(h/2).
 :- dynamic(o/2).
 :- dynamic(t/2).
-:- ['../Test_Input/input_13'].
 
 start(0,0).
 m(_,_). % Depicts move in the output
@@ -251,7 +250,7 @@ throw_up_left(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :-
 % Steps - [], in which all the moves will be stored,
 
 solve_game_random(_,_,_,_,0):-
-	format('Was not able to solve!~n').
+	format('Was not able to solve!').
 
 solve_game_random(Pos_x, Pos_y, Steps, Nsteps, Max_steps) :- (
 	% Debug output:

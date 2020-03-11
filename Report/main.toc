@@ -1,0 +1,30 @@
+\contentsline {section}{\numberline {1}Assignment Assumptions and Testing}{3}{section.1}% 
+\contentsline {subsection}{\numberline {1.1}Assignment Assumptions}{3}{subsection.1.1}% 
+\contentsline {subsection}{\numberline {1.2}Testing}{4}{subsection.1.2}% 
+\contentsline {section}{\numberline {2}Random Search}{5}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Basic Idea}{5}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Code Examples}{5}{subsection.2.2}% 
+\contentsline {subsection}{\numberline {2.3}Testing}{6}{subsection.2.3}% 
+\contentsline {subsection}{\numberline {2.4}2 Yards Vision}{7}{subsection.2.4}% 
+\contentsline {subsection}{\numberline {2.5}Hard and Impossible to Solve Maps}{7}{subsection.2.5}% 
+\contentsline {subsection}{\numberline {2.6}Known bugs and issues to solve}{7}{subsection.2.6}% 
+\contentsline {subsection}{\numberline {2.7}Conclusion}{7}{subsection.2.7}% 
+\contentsline {section}{\numberline {3}Backtracking}{8}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Basic Idea}{8}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Code Examples}{8}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}Testing}{9}{subsection.3.3}% 
+\contentsline {subsection}{\numberline {3.4}2 Yards Vision}{9}{subsection.3.4}% 
+\contentsline {subsection}{\numberline {3.5}Hard and Impossible to solve maps}{9}{subsection.3.5}% 
+\contentsline {subsection}{\numberline {3.6}Conclusion}{9}{subsection.3.6}% 
+\contentsline {section}{\numberline {4}Greedy Algorithm}{10}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Basic Idea}{10}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}Code Examples}{10}{subsection.4.2}% 
+\contentsline {subsection}{\numberline {4.3}Testing}{11}{subsection.4.3}% 
+\contentsline {subsection}{\numberline {4.4}2 Yards Vision}{11}{subsection.4.4}% 
+\contentsline {subsection}{\numberline {4.5}Hard or impossible to solve maps}{11}{subsection.4.5}% 
+\contentsline {subsection}{\numberline {4.6}Conclusion}{11}{subsection.4.6}% 
+\contentsline {section}{\numberline {5}Simple Statistical Analysis of the Search Algorithms}{12}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}Corner Cases}{12}{subsection.5.1}% 
+\contentsline {subsection}{\numberline {5.2}Dense and Sparse Maps}{13}{subsection.5.2}% 
+\contentsline {subsection}{\numberline {5.3}Conclusion}{13}{subsection.5.3}% 
+\contentsline {section}{\numberline {A}How to Run All the Algorithms}{14}{appendix.A}% 
